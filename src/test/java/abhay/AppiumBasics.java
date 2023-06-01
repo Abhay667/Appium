@@ -21,6 +21,8 @@ public class AppiumBasics extends BaseTest {
 	{
 		
 		driver.findElement(AppiumBy.accessibilityId("Preference")).click();
+		// using 'Appium By' for Appium only.  findElement,using accessibility, click() is an event. 
+		
 //		driver.findElement(AppiumBy.accessibilityId("3. Preference dependencies")).click();
 		driver.findElement(By.xpath("//android.widget.TextView[@content-desc=\"3. Preference dependencies\"]")).click();
 		//driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.CheckBox")).click();

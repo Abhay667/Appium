@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="abhay.Drag_and_drop">
+      <class name="abhay.Long_press">
         <methods>
           <include name="configureAppium"/>
           <include name="tearDown"/>
-          <include name="drag_and_drop"/>
+          <include name="Longpressgesture"/>
         </methods>
-      </class> <!-- abhay.Drag_and_drop -->
+      </class> <!-- abhay.Long_press -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

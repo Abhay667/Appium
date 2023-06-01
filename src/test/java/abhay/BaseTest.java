@@ -10,33 +10,34 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeClass; // to run TestNG
 
 import com.google.common.collect.ImmutableMap;
 
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.options.UiAutomator2Options;
-import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.android.AndroidDriver; // for Android Driver class
+import io.appium.java_client.android.options.UiAutomator2Options; // for UiAutomator2Options class
+import io.appium.java_client.service.local.AppiumDriverLocalService; // for @BeforeClass
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 
 public class BaseTest {
-	public AndroidDriver driver;
-	public AppiumDriverLocalService service;
-	@BeforeClass
+	public AndroidDriver driver; // globally declaring AndroiDriver object
+	public AppiumDriverLocalService service; // globally declaring AppiumDriverLocalService object
+	@BeforeClass // execute everything before executing sub class
 	
 	public void configureAppium() throws MalformedURLException
 	{
 
 		 service = new AppiumServiceBuilder().withAppiumJS(new File("C:\\Users\\HP\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib//main.js"
-				+ ""))
-			.withIPAddress("127.0.0.1").usingPort(4723)
+				+ ""))//  Appium driver object
+			.withIPAddress("127.0.0.1").usingPort(4723) // not working  
 			.build();
 		//service.start();
 				
 				
 		UiAutomator2Options options =new UiAutomator2Options();
+		// class which provides configuration details
 		options.setDeviceName("samsung SM-J210F");
-		options.setApp("C:\\Users\\HP\\eclipse-workspace\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
+		options.setApp("C:\\Users\\HP\\eclipse-workspace\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk"); // path of app right click on apk-> properties.
 		
 		
 		
@@ -44,7 +45,9 @@ public class BaseTest {
 		
 		
 		
-		driver = new AndroidDriver(new URL("http://127.0.0.1:4723"),options);
+		driver = new AndroidDriver(new URL("http://127.0.0.1:4723"),options); // wrap in URL class
+		// its local machine IP, capabilities 
+		// driver object use to perform actions
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
 	}
 	public void long_press(WebElement ele)
@@ -78,11 +81,11 @@ public class BaseTest {
 		
 	}
 	
-	@AfterClass
+	@AfterClass // it will execute after each and every code will execute
 	public void tearDown()
 
 	{
-		driver.quit();
+		driver.quit();// to stop driver, accessing driver object
 		 service.stop();
 	}
 }

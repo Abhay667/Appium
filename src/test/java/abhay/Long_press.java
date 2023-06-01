@@ -21,7 +21,7 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 
-public class Long_press extends BaseTest {
+public class Long_press extends BaseTest {// inheriting base class to access objects 
 	@Test
 	public void Longpressgesture() throws MalformedURLException, InterruptedException
 	{
