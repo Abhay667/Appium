@@ -48,7 +48,8 @@ public class BaseTest {
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723"),options); // wrap in URL class
 		// its local machine IP, capabilities 
 		// driver object use to perform actions
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));// wait until you find that element , at most for 7 seconds
 	}
 	public void long_press(WebElement ele)
 	{
