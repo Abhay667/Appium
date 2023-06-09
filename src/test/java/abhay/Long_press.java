@@ -25,10 +25,18 @@ public class Long_press extends BaseTest {// inheriting base class to access obj
 	@Test
 	public void Longpressgesture() throws MalformedURLException, InterruptedException
 	{
+		//Views->expandable lists->Cursor adaptor -> sample names(long press)
 	driver.findElement(AppiumBy.accessibilityId("Views")).click();
+	// click on 'Views' ,using accessibility id
 	driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Expandable Lists\"]")).click();
+	//click on Expandable lists , using X path
+	
 	System.out.println("passed view element");
+	// just debugging
+	
 		driver.findElement(AppiumBy.accessibilityId("1. Custom Adapter")).click();
+		//click on Custom Adapter ,using accessibility id 
+		
 		WebElement ele= driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ExpandableListView/android.widget.TextView[1]"));
 		long_press(ele);
 		//Thread.sleep(200);

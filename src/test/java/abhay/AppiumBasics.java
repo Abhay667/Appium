@@ -21,23 +21,32 @@ public class AppiumBasics extends BaseTest {
 	{
 		
 		driver.findElement(AppiumBy.accessibilityId("Preference")).click();
-		// using 'Appium By' for Appium only.  findElement,using accessibility, click() is an event. 
+		//Preferences 
 		
 
 		driver.findElement(By.xpath("//android.widget.TextView[@content-desc=\"3. Preference dependencies\"]")).click();
+		//Preferences Dependencies 
 
-		driver.findElement(AppiumBy.id("android:id/checkbox")).click(); // check box
+		driver.findElement(AppiumBy.id("android:id/checkbox")).click(); 
+		// check box
 		
 		driver.findElement(By.xpath("(//android.widget.RelativeLayout)[2]")).click();
-		// using [2] index 
+		// using [2] index of 'WIFI settings' 
 		
 		String alerttitle =driver.findElement(AppiumBy.id("android:id/alertTitle")).getText();
+		// extracting  from Pop UP title
 		Assert.assertEquals(alerttitle,"WiFi settings");
-		driver.findElement(AppiumBy.id("android:id/edit")).sendKeys("my wifi");
-	    //driver.findElement(AppiumBy.id("android:id/button1"));
+		//using assertions to verify values 
+		
+		driver.findElement(AppiumBy.id("android:id/edit")).sendKeys("Abhay's wifi");
+		// sending data by using 'sendKeys' .
+		
+	    
 	    driver.findElements(AppiumBy.className("android.widget.Button")).get(1).clear();
+	    //second index 
 	    
 	}
+	// using 'Appium By' for Appium only.  findElement,using accessibility, click() is an event. 
 	//  how to prepare x path?
    //  //tagName[@attribute='value']
   //   Accessibility id is always unique use it if available
@@ -47,7 +56,7 @@ public class AppiumBasics extends BaseTest {
 // try to use AppiumBy(future proof)	
 	
 	//driver.findElement(By.xpath("//android.widget.RelativeLayout")).click(); (x path can also be used by // tag name )
-	
+	//driver.findElement(AppiumBy.id("android:id/button1")); for buttons you can use unique id
 	
 	
 
